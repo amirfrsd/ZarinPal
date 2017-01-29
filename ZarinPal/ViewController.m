@@ -7,18 +7,39 @@
 //
 
 #import "ViewController.h"
-
-@interface ViewController ()
-
+#import "ZarinPal.h"
+@interface ViewController () {
+    NSString *paymentURL;
+    NSString *error;
+}
 @end
 
 @implementation ViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view, typically from a nib.
+    [self startPayment];
 }
 
+- (void) startPayment {
+    ZarinPal *zarinPalObject = [[ZarinPal alloc] initWithMerchantID:@"XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX"];
+    [zarinPalObject startPaymentWithAmount:@"1000" callBackURL:@"http://goeogle.com" description:@"test" mobile:@"09126127429" email:@"amir.farsad@gmail.com" paymentBlock:^(BOOL paymentRequestSent) {
+        if (paymentRequestSent) {
+            NSLog(@"request sent");
+        }
+    }];
+}
+
+- (void) verifyPayment {
+    ZarinPal *zarinPalObject = [[ZarinPal alloc] initWithMerchantID:@"XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX"];
+    [zarinPalObject verifyPaymentWithAmount:@"amount" authority:@"authority" verificationBlock:^(BOOL verificationRequestSent) {
+        if (verificationRequestSent) {
+            NSLog(@"request sent");
+        } else {
+            //oops!
+        }
+    }];
+}
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

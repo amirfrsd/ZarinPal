@@ -15,6 +15,15 @@
 		293343F41E25104A000F51FC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 293343F21E25104A000F51FC /* LaunchScreen.storyboard */; };
 		293343FF1E25104A000F51FC /* ZarinPalTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 293343FE1E25104A000F51FC /* ZarinPalTests.m */; };
 		2933440A1E25104A000F51FC /* ZarinPalUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 293344091E25104A000F51FC /* ZarinPalUITests.m */; };
+		2933441A1E25107D000F51FC /* ZarinPal.m in Sources */ = {isa = PBXBuildFile; fileRef = 293344191E25107D000F51FC /* ZarinPal.m */; };
+		293344271E2576B0000F51FC /* NSDate+ISO8601Parsing.m in Sources */ = {isa = PBXBuildFile; fileRef = 2933441C1E2576B0000F51FC /* NSDate+ISO8601Parsing.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		293344281E2576B0000F51FC /* NSDate+ISO8601Unparsing.m in Sources */ = {isa = PBXBuildFile; fileRef = 2933441E1E2576B0000F51FC /* NSDate+ISO8601Unparsing.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		293344291E2576B0000F51FC /* PaymentGatewayImplementationService.m in Sources */ = {isa = PBXBuildFile; fileRef = 293344201E2576B0000F51FC /* PaymentGatewayImplementationService.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		2933442A1E2576B0000F51FC /* USAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 293344221E2576B0000F51FC /* USAdditions.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		2933442B1E2576B0000F51FC /* USGlobals.m in Sources */ = {isa = PBXBuildFile; fileRef = 293344241E2576B0000F51FC /* USGlobals.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		2933442C1E2576B0000F51FC /* xsd.m in Sources */ = {isa = PBXBuildFile; fileRef = 293344261E2576B0000F51FC /* xsd.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		293344301E257EFA000F51FC /* libxml2.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 2933442F1E257EFA000F51FC /* libxml2.tbd */; };
+		293344321E257F02000F51FC /* libxml2.2.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 293344311E257F02000F51FC /* libxml2.2.tbd */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +60,22 @@
 		293344051E25104A000F51FC /* ZarinPalUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ZarinPalUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		293344091E25104A000F51FC /* ZarinPalUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZarinPalUITests.m; sourceTree = "<group>"; };
 		2933440B1E25104A000F51FC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		293344181E25107D000F51FC /* ZarinPal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZarinPal.h; sourceTree = "<group>"; };
+		293344191E25107D000F51FC /* ZarinPal.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZarinPal.m; sourceTree = "<group>"; };
+		2933441B1E2576B0000F51FC /* NSDate+ISO8601Parsing.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDate+ISO8601Parsing.h"; sourceTree = "<group>"; };
+		2933441C1E2576B0000F51FC /* NSDate+ISO8601Parsing.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDate+ISO8601Parsing.m"; sourceTree = "<group>"; };
+		2933441D1E2576B0000F51FC /* NSDate+ISO8601Unparsing.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDate+ISO8601Unparsing.h"; sourceTree = "<group>"; };
+		2933441E1E2576B0000F51FC /* NSDate+ISO8601Unparsing.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDate+ISO8601Unparsing.m"; sourceTree = "<group>"; };
+		2933441F1E2576B0000F51FC /* PaymentGatewayImplementationService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PaymentGatewayImplementationService.h; sourceTree = "<group>"; };
+		293344201E2576B0000F51FC /* PaymentGatewayImplementationService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PaymentGatewayImplementationService.m; sourceTree = "<group>"; };
+		293344211E2576B0000F51FC /* USAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = USAdditions.h; sourceTree = "<group>"; };
+		293344221E2576B0000F51FC /* USAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = USAdditions.m; sourceTree = "<group>"; };
+		293344231E2576B0000F51FC /* USGlobals.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = USGlobals.h; sourceTree = "<group>"; };
+		293344241E2576B0000F51FC /* USGlobals.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = USGlobals.m; sourceTree = "<group>"; };
+		293344251E2576B0000F51FC /* xsd.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = xsd.h; sourceTree = "<group>"; };
+		293344261E2576B0000F51FC /* xsd.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = xsd.m; sourceTree = "<group>"; };
+		2933442F1E257EFA000F51FC /* libxml2.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libxml2.tbd; path = usr/lib/libxml2.tbd; sourceTree = SDKROOT; };
+		293344311E257F02000F51FC /* libxml2.2.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libxml2.2.tbd; path = usr/lib/libxml2.2.tbd; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +83,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				293344321E257F02000F51FC /* libxml2.2.tbd in Frameworks */,
+				293344301E257EFA000F51FC /* libxml2.tbd in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -85,6 +112,7 @@
 				293343FD1E25104A000F51FC /* ZarinPalTests */,
 				293344081E25104A000F51FC /* ZarinPalUITests */,
 				293343E21E25104A000F51FC /* Products */,
+				2933442E1E257EFA000F51FC /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -101,6 +129,8 @@
 		293343E31E25104A000F51FC /* ZarinPal */ = {
 			isa = PBXGroup;
 			children = (
+				2933442D1E2576B4000F51FC /* SoapClient */,
+				293344171E251055000F51FC /* AFZarinPal */,
 				293343E71E25104A000F51FC /* AppDelegate.h */,
 				293343E81E25104A000F51FC /* AppDelegate.m */,
 				293343EA1E25104A000F51FC /* ViewController.h */,
@@ -138,6 +168,43 @@
 				2933440B1E25104A000F51FC /* Info.plist */,
 			);
 			path = ZarinPalUITests;
+			sourceTree = "<group>";
+		};
+		293344171E251055000F51FC /* AFZarinPal */ = {
+			isa = PBXGroup;
+			children = (
+				293344181E25107D000F51FC /* ZarinPal.h */,
+				293344191E25107D000F51FC /* ZarinPal.m */,
+			);
+			name = AFZarinPal;
+			sourceTree = "<group>";
+		};
+		2933442D1E2576B4000F51FC /* SoapClient */ = {
+			isa = PBXGroup;
+			children = (
+				2933441B1E2576B0000F51FC /* NSDate+ISO8601Parsing.h */,
+				2933441C1E2576B0000F51FC /* NSDate+ISO8601Parsing.m */,
+				2933441D1E2576B0000F51FC /* NSDate+ISO8601Unparsing.h */,
+				2933441E1E2576B0000F51FC /* NSDate+ISO8601Unparsing.m */,
+				2933441F1E2576B0000F51FC /* PaymentGatewayImplementationService.h */,
+				293344201E2576B0000F51FC /* PaymentGatewayImplementationService.m */,
+				293344211E2576B0000F51FC /* USAdditions.h */,
+				293344221E2576B0000F51FC /* USAdditions.m */,
+				293344231E2576B0000F51FC /* USGlobals.h */,
+				293344241E2576B0000F51FC /* USGlobals.m */,
+				293344251E2576B0000F51FC /* xsd.h */,
+				293344261E2576B0000F51FC /* xsd.m */,
+			);
+			name = SoapClient;
+			sourceTree = "<group>";
+		};
+		2933442E1E257EFA000F51FC /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				293344311E257F02000F51FC /* libxml2.2.tbd */,
+				2933442F1E257EFA000F51FC /* libxml2.tbd */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -276,9 +343,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				293344271E2576B0000F51FC /* NSDate+ISO8601Parsing.m in Sources */,
+				2933442B1E2576B0000F51FC /* USGlobals.m in Sources */,
+				293344281E2576B0000F51FC /* NSDate+ISO8601Unparsing.m in Sources */,
+				2933442C1E2576B0000F51FC /* xsd.m in Sources */,
 				293343EC1E25104A000F51FC /* ViewController.m in Sources */,
 				293343E91E25104A000F51FC /* AppDelegate.m in Sources */,
+				293344291E2576B0000F51FC /* PaymentGatewayImplementationService.m in Sources */,
+				2933441A1E25107D000F51FC /* ZarinPal.m in Sources */,
 				293343E61E25104A000F51FC /* main.m in Sources */,
+				2933442A1E2576B0000F51FC /* USAdditions.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -428,6 +502,8 @@
 				DEVELOPMENT_TEAM = R32459M72F;
 				INFOPLIST_FILE = ZarinPal/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				OTHER_CFLAGS = "-I/usr/include/libxml2";
+				OTHER_LDFLAGS = "-lxml2";
 				PRODUCT_BUNDLE_IDENTIFIER = net.emersad.ZarinPal;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
@@ -440,6 +516,8 @@
 				DEVELOPMENT_TEAM = R32459M72F;
 				INFOPLIST_FILE = ZarinPal/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				OTHER_CFLAGS = "-I/usr/include/libxml2";
+				OTHER_LDFLAGS = "-lxml2";
 				PRODUCT_BUNDLE_IDENTIFIER = net.emersad.ZarinPal;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
