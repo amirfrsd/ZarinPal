@@ -7,7 +7,6 @@
 //
 
 #import "ZarinPal.h"
-
 @implementation ZarinPal 
 
 
@@ -18,45 +17,45 @@
 
 
 - (void)startPaymentWithAmount:(NSNumber *)amount callBackURL:(NSString *)callback description:(NSString *)desc mobile:(NSString *)mobile email:(NSString *)mail paymentBlock:(paymentBlock) paymentBlock {
-    PaymentGatewayImplementationServiceBinding *paymentGateway = [PaymentGatewayImplementationService PaymentGatewayImplementationServiceBinding];
-    PaymentGatewayImplementationService_PaymentRequest *paymentRequest = [PaymentGatewayImplementationService_PaymentRequest new];
-    paymentRequest.Amount = amount;
-    paymentRequest.CallbackURL = callback;
-    paymentRequest.Description = desc;
-    paymentRequest.Mobile = mobile;
-    paymentRequest.Email = mail;
-    paymentRequest.MerchantID = self.merchantID;
-    [paymentGateway PaymentRequestAsyncUsingParameters:paymentRequest delegate:self];
+    IVTPaymentGatewayImplementationServiceBinding *service = [[IVTPaymentGatewayImplementationServiceBinding alloc] init];
+    [service PaymentRequestAsync:self.merchantID Amount:amount.intValue Description:desc Email:mail Mobile:mobile CallbackURL:callback __target:self __handler:@selector(handler:)];
     paymentBlock(YES);
 }
 
+-(void) handler:(id)obj {
+    if ([obj isKindOfClass:[IVTPaymentRequestResponse class]]) {
+        IVTPaymentRequestResponse *result = (IVTPaymentRequestResponse *)obj;
+        NSDictionary *dict = @{
+                               @"Type":@"paymentRequest",
+                               @"Authority":[obj valueForKey:@"Authority"]
+                               };
+        [[NSNotificationCenter defaultCenter] postNotificationName:@"responseReceived" object:dict];
+    } else if ([obj isKindOfClass:[IVTPaymentVerificationResponse class]]) {
+        IVTPaymentVerificationResponse *result = (IVTPaymentVerificationResponse *)obj;
+        if ([obj valueForKey:@"Status"] == 100) {
+            NSDictionary *dict = @{
+                                   @"Type":@"verificationRequest",
+                                   @"Status":@"1"
+                                   };
+            [[NSNotificationCenter defaultCenter] postNotificationName:@"responseReceived" object:dict];
+        } else {
+            NSDictionary *dict = @{
+                                   @"Type":@"verificationRequest",
+                                   @"Status":@"0"
+                                   };
+            [[NSNotificationCenter defaultCenter] postNotificationName:@"responseReceived" object:dict];
+        }
+    } else {
+        NSError *err = (NSError *)obj;
+        [[NSNotificationCenter defaultCenter] postNotificationName:@"responseReceived" object:@{@"Type":@"failed"}];
+    }
+}
+
 - (void)verifyPaymentWithAmount:(NSString *)amount authority:(NSString *)authority verificationBlock:(verificationBlock) verificationBlock {
-    PaymentGatewayImplementationServiceBinding *paymentGateway = [PaymentGatewayImplementationService PaymentGatewayImplementationServiceBinding];
-    PaymentGatewayImplementationService_PaymentVerification *verificationRequest = [PaymentGatewayImplementationService_PaymentVerification new];
-    verificationRequest.Amount = amount;
-    verificationRequest.Authority = authority;
-    verificationRequest.MerchantID = self.merchantID;
-    [paymentGateway PaymentVerificationAsyncUsingParameters:verificationRequest delegate:self];
+    IVTPaymentGatewayImplementationServiceBinding *service = [[IVTPaymentGatewayImplementationServiceBinding alloc] init];
+    [service PaymentVerificationAsync:self.merchantID Authority:authority Amount:amount __target:self __handler:@selector(handler:)];
     verificationBlock(YES);
 }
 
-- (void) operation:(PaymentGatewayImplementationServiceBinding *)operation completedWithResponse:(PaymentGatewayImplementationServiceBindingResponse *)response {
-    NSArray *responseBody = response.bodyParts;
-    for (id bodyPart in responseBody) {
-        if ([bodyPart isKindOfClass:[SOAPFault class]]) {
-            NSLog(@"error occured");
-            continue;
-        } else if ([bodyPart isKindOfClass:[PaymentGatewayImplementationService_PaymentRequestResponse class]]) {
-            PaymentGatewayImplementationService_PaymentRequestResponse *responseBody = (PaymentGatewayImplementationService_PaymentRequestResponse *)bodyPart;
-            NSString *paymentURL = [NSString stringWithFormat:@"https://www.zarinpal.com/pg/StartPay/%@",responseBody.Authority];
-            NSLog(@"auth is %@", paymentURL);
-            continue;
-        } else if ([bodyPart isKindOfClass:[PaymentGatewayImplementationService_PaymentVerificationResponse class]]) {
-            PaymentGatewayImplementationService_PaymentVerificationResponse *responseBody = (PaymentGatewayImplementationService_PaymentVerificationResponse *)bodyPart;
-            NSString *status = responseBody.Status;
-            NSString *refID = responseBody.RefID;
-        }
-    }
-}
 
 @end

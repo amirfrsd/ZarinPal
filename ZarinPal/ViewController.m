@@ -18,21 +18,42 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    [self startPayment];
+    //[self startPayment];
+    [self verifyPayment];
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(responseReceived:)
+                                                 name:@"responseReceived"
+                                               object:nil];
 }
 
 - (void) startPayment {
-    ZarinPal *zarinPalObject = [[ZarinPal alloc] initWithMerchantID:@"XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX"];
-    [zarinPalObject startPaymentWithAmount:@"1000" callBackURL:@"http://goeogle.com" description:@"test" mobile:@"09126127429" email:@"amir.farsad@gmail.com" paymentBlock:^(BOOL paymentRequestSent) {
+    ZarinPal *zarinPalObject = [[ZarinPal alloc] initWithMerchantID:@"MERCHANT-ID"];
+    [zarinPalObject startPaymentWithAmount:@"AMOUNT IN TOMANS" callBackURL:@"CALLBACK URL" description:@"DESCRIPTION" mobile:@"MOBILE" email:@"EMAIL" paymentBlock:^(BOOL paymentRequestSent) {
         if (paymentRequestSent) {
             NSLog(@"request sent");
         }
     }];
 }
-
+- (void) responseReceived: (NSNotification *) notification {
+    NSDictionary *dict = notification.object;
+    NSString *type = [dict valueForKey:@"Type"];
+    if ([type isEqualToString:@"paymentRequest"]) {
+        NSString *url = [NSString stringWithFormat:@"https://www.zarinpal.com/pg/StartPay/%@",[dict valueForKey:@"Authority"]];
+        NSLog(@"this is url %@", url);
+    } else if ([type isEqualToString:@"verificationRequest"]) {
+        NSString *response = [dict valueForKey:@"Status"];
+        if ([response isEqualToString:@"1"]) {
+            NSLog(@"payment done");
+        } else {
+            //oops :(
+        }
+    } else if ([type isEqualToString:@"failed"]) {
+        //something wrong
+    }
+}
 - (void) verifyPayment {
-    ZarinPal *zarinPalObject = [[ZarinPal alloc] initWithMerchantID:@"XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX"];
-    [zarinPalObject verifyPaymentWithAmount:@"amount" authority:@"authority" verificationBlock:^(BOOL verificationRequestSent) {
+    ZarinPal *zarinPalObject = [[ZarinPal alloc] initWithMerchantID:@"MERCHANT-ID"];
+    [zarinPalObject verifyPaymentWithAmount:@"AMOUNT IN TOMANS" authority:@"AUTHORITY" verificationBlock:^(BOOL verificationRequestSent) {
         if (verificationRequestSent) {
             NSLog(@"request sent");
         } else {

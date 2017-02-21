@@ -7,14 +7,15 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "PaymentGatewayImplementationService.h"
-@interface ZarinPal : NSObject <PaymentGatewayImplementationServiceBindingResponseDelegate>
+#import "IVTPaymentRequestResponse.h"
+#import "IVTPaymentVerificationResponse.h"
+#import "IVTPaymentGatewayImplementationServiceBinding.h"
+@interface ZarinPal : NSObject
 
 typedef void(^paymentBlock)(BOOL);
 typedef void(^verificationBlock)(BOOL);
 
 @property NSString *merchantID;
-
 - (id)initWithMerchantID:(NSString *)merchantID;
 
 - (void)startPaymentWithAmount:(NSString *)amount callBackURL:(NSString *)callback description:(NSString *)desc mobile:(NSString *)mobile email:(NSString *)mail paymentBlock:(paymentBlock) paymentBlock;
