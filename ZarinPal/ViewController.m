@@ -45,10 +45,10 @@
         if ([response isEqualToString:@"1"]) {
             NSLog(@"payment done");
         } else {
-            //oops :(
+            NSLog(@":(");
         }
     } else if ([type isEqualToString:@"failed"]) {
-        //something wrong
+        NSLog(@":(");
     }
 }
 - (void) verifyPayment {

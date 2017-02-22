@@ -104,22 +104,6 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ZarinPal/ViewController.m"
-            timestampString = "509383258.179145"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "39"
-            endingLineNumber = "39"
-            landmarkName = "-responseReceived:"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "ZarinPal/ViewController.m"
             timestampString = "509383258.51796"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
