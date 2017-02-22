@@ -9,7 +9,7 @@ Examples are included :-)
 
 Simply Add a notification Observer 
 
-```
+```Objective-C
     [[NSNotificationCenter defaultCenter] addObserver:self
                                              selector:@selector(responseReceived:)
                                                  name:@"responseReceived"
@@ -18,7 +18,7 @@ Simply Add a notification Observer
 ```
 
 Payment Request
-```
+```Objective-C
      ZarinPal *zarinPalObject = [[ZarinPal alloc] initWithMerchantID:@"MERCHANT-ID"];
     [zarinPalObject startPaymentWithAmount:@"AMOUNT IN TOMANS" callBackURL:@"CALLBACK URL" description:@"DESCRIPTION" mobile:@"MOBILE" email:@"EMAIL" paymentBlock:^(BOOL paymentRequestSent) {
         if (paymentRequestSent) {
@@ -27,7 +27,7 @@ Payment Request
     }];
 ```
 Payment Verification Request
-```
+```Objective-C
     ZarinPal *zarinPalObject = [[ZarinPal alloc] initWithMerchantID:@"MERCHANT-ID"];
     [zarinPalObject verifyPaymentWithAmount:@"AMOUNT IN TOMANS" authority:@"AUTHORITY" verificationBlock:^(BOOL verificationRequestSent) {
         if (verificationRequestSent) {
@@ -38,7 +38,7 @@ Payment Verification Request
     }];
 ```
 And wait for response: 
-```
+```Objective-C
 - (void) responseReceived: (NSNotification *) notification {
     NSDictionary *dict = notification.object;
     NSString *type = [dict valueForKey:@"Type"];
