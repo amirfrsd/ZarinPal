@@ -5,7 +5,33 @@ requirements: Zarinpal Merchant ID
 
 Examples are included :-)
 
-# How should i use this?
+# Swift
+
+Simply Drag Files to your project (ZarinPal.h,.m) , Then `#import "ZarinPal.h"` in your Bridging header, you are done :P
+
+Payment Request
+```Swift
+        zarinPalObject?.startPayment(withAmount: "", callBackURL: "", description: "", mobile: "", email: "", paymentBlock: { (success, response) in
+            if success {
+               print(response)
+            } else {
+            
+            }
+        })
+```
+
+Payment Verification Request
+```Swift
+        zarinPalObject?.verifyPayment(withAmount: "", authority: "", verificationBlock:  { (success, response) in
+            if success {
+               print(response)
+            } else {
+            
+            }
+        })
+```
+
+# Objective-C
 
 Payment Request
 ```Objective-C
@@ -30,3 +56,4 @@ Payment Verification Request
         }
     }];
 ```
+
