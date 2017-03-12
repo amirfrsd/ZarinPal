@@ -18,18 +18,6 @@
 		2933441A1E25107D000F51FC /* ZarinPal.m in Sources */ = {isa = PBXBuildFile; fileRef = 293344191E25107D000F51FC /* ZarinPal.m */; };
 		293344301E257EFA000F51FC /* libxml2.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 2933442F1E257EFA000F51FC /* libxml2.tbd */; };
 		293344321E257F02000F51FC /* libxml2.2.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 293344311E257F02000F51FC /* libxml2.2.tbd */; };
-		298A38E21E5C844A00B57B4D /* IVTHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 298A38D51E5C844A00B57B4D /* IVTHelper.m */; };
-		298A38E31E5C844A00B57B4D /* IVTPaymentGatewayImplementationServiceBinding.m in Sources */ = {isa = PBXBuildFile; fileRef = 298A38D71E5C844A00B57B4D /* IVTPaymentGatewayImplementationServiceBinding.m */; };
-		298A38E41E5C844A00B57B4D /* IVTPaymentRequestResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = 298A38D91E5C844A00B57B4D /* IVTPaymentRequestResponse.m */; };
-		298A38E51E5C844A00B57B4D /* IVTPaymentRequestWithExtraResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = 298A38DB1E5C844A00B57B4D /* IVTPaymentRequestWithExtraResponse.m */; };
-		298A38E61E5C844A00B57B4D /* IVTPaymentVerificationResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = 298A38DD1E5C844A00B57B4D /* IVTPaymentVerificationResponse.m */; };
-		298A38E71E5C844A00B57B4D /* IVTRequestResultHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 298A38DF1E5C844A00B57B4D /* IVTRequestResultHandler.m */; };
-		298A38E81E5C844A00B57B4D /* IVTSoapError.m in Sources */ = {isa = PBXBuildFile; fileRef = 298A38E11E5C844A00B57B4D /* IVTSoapError.m */; };
-		298A38F01E5C84A000B57B4D /* DDXMLDocument.m in Sources */ = {isa = PBXBuildFile; fileRef = 298A38EB1E5C84A000B57B4D /* DDXMLDocument.m */; };
-		298A38F11E5C84A000B57B4D /* DDXMLElement.m in Sources */ = {isa = PBXBuildFile; fileRef = 298A38ED1E5C84A000B57B4D /* DDXMLElement.m */; };
-		298A38F21E5C84A000B57B4D /* DDXMLNode.m in Sources */ = {isa = PBXBuildFile; fileRef = 298A38EF1E5C84A000B57B4D /* DDXMLNode.m */; };
-		298A38F81E5C84C500B57B4D /* NSString+DDXML.m in Sources */ = {isa = PBXBuildFile; fileRef = 298A38F71E5C84C500B57B4D /* NSString+DDXML.m */; };
-		298A38FC1E5C84D000B57B4D /* DDXMLElementAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 298A38FB1E5C84D000B57B4D /* DDXMLElementAdditions.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -70,32 +58,6 @@
 		293344191E25107D000F51FC /* ZarinPal.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZarinPal.m; sourceTree = "<group>"; };
 		2933442F1E257EFA000F51FC /* libxml2.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libxml2.tbd; path = usr/lib/libxml2.tbd; sourceTree = SDKROOT; };
 		293344311E257F02000F51FC /* libxml2.2.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libxml2.2.tbd; path = usr/lib/libxml2.2.tbd; sourceTree = SDKROOT; };
-		298A38D41E5C844A00B57B4D /* IVTHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IVTHelper.h; sourceTree = "<group>"; };
-		298A38D51E5C844A00B57B4D /* IVTHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IVTHelper.m; sourceTree = "<group>"; };
-		298A38D61E5C844A00B57B4D /* IVTPaymentGatewayImplementationServiceBinding.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IVTPaymentGatewayImplementationServiceBinding.h; sourceTree = "<group>"; };
-		298A38D71E5C844A00B57B4D /* IVTPaymentGatewayImplementationServiceBinding.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IVTPaymentGatewayImplementationServiceBinding.m; sourceTree = "<group>"; };
-		298A38D81E5C844A00B57B4D /* IVTPaymentRequestResponse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IVTPaymentRequestResponse.h; sourceTree = "<group>"; };
-		298A38D91E5C844A00B57B4D /* IVTPaymentRequestResponse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IVTPaymentRequestResponse.m; sourceTree = "<group>"; };
-		298A38DA1E5C844A00B57B4D /* IVTPaymentRequestWithExtraResponse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IVTPaymentRequestWithExtraResponse.h; sourceTree = "<group>"; };
-		298A38DB1E5C844A00B57B4D /* IVTPaymentRequestWithExtraResponse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IVTPaymentRequestWithExtraResponse.m; sourceTree = "<group>"; };
-		298A38DC1E5C844A00B57B4D /* IVTPaymentVerificationResponse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IVTPaymentVerificationResponse.h; sourceTree = "<group>"; };
-		298A38DD1E5C844A00B57B4D /* IVTPaymentVerificationResponse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IVTPaymentVerificationResponse.m; sourceTree = "<group>"; };
-		298A38DE1E5C844A00B57B4D /* IVTRequestResultHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IVTRequestResultHandler.h; sourceTree = "<group>"; };
-		298A38DF1E5C844A00B57B4D /* IVTRequestResultHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IVTRequestResultHandler.m; sourceTree = "<group>"; };
-		298A38E01E5C844A00B57B4D /* IVTSoapError.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IVTSoapError.h; sourceTree = "<group>"; };
-		298A38E11E5C844A00B57B4D /* IVTSoapError.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IVTSoapError.m; sourceTree = "<group>"; };
-		298A38E91E5C84A000B57B4D /* DDXML.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DDXML.h; sourceTree = "<group>"; };
-		298A38EA1E5C84A000B57B4D /* DDXMLDocument.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DDXMLDocument.h; sourceTree = "<group>"; };
-		298A38EB1E5C84A000B57B4D /* DDXMLDocument.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DDXMLDocument.m; sourceTree = "<group>"; };
-		298A38EC1E5C84A000B57B4D /* DDXMLElement.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DDXMLElement.h; sourceTree = "<group>"; };
-		298A38ED1E5C84A000B57B4D /* DDXMLElement.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DDXMLElement.m; sourceTree = "<group>"; };
-		298A38EE1E5C84A000B57B4D /* DDXMLNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DDXMLNode.h; sourceTree = "<group>"; };
-		298A38EF1E5C84A000B57B4D /* DDXMLNode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DDXMLNode.m; sourceTree = "<group>"; };
-		298A38F41E5C84B000B57B4D /* DDXMLPrivate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DDXMLPrivate.h; sourceTree = "<group>"; };
-		298A38F61E5C84C500B57B4D /* NSString+DDXML.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+DDXML.h"; sourceTree = "<group>"; };
-		298A38F71E5C84C500B57B4D /* NSString+DDXML.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+DDXML.m"; sourceTree = "<group>"; };
-		298A38FA1E5C84D000B57B4D /* DDXMLElementAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DDXMLElementAdditions.h; sourceTree = "<group>"; };
-		298A38FB1E5C84D000B57B4D /* DDXMLElementAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DDXMLElementAdditions.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -149,7 +111,6 @@
 		293343E31E25104A000F51FC /* ZarinPal */ = {
 			isa = PBXGroup;
 			children = (
-				298A38F31E5C84A400B57B4D /* KissXML */,
 				293344171E251055000F51FC /* AFZarinPal */,
 				293343E71E25104A000F51FC /* AppDelegate.h */,
 				293343E81E25104A000F51FC /* AppDelegate.m */,
@@ -193,20 +154,6 @@
 		293344171E251055000F51FC /* AFZarinPal */ = {
 			isa = PBXGroup;
 			children = (
-				298A38D41E5C844A00B57B4D /* IVTHelper.h */,
-				298A38D51E5C844A00B57B4D /* IVTHelper.m */,
-				298A38D61E5C844A00B57B4D /* IVTPaymentGatewayImplementationServiceBinding.h */,
-				298A38D71E5C844A00B57B4D /* IVTPaymentGatewayImplementationServiceBinding.m */,
-				298A38D81E5C844A00B57B4D /* IVTPaymentRequestResponse.h */,
-				298A38D91E5C844A00B57B4D /* IVTPaymentRequestResponse.m */,
-				298A38DA1E5C844A00B57B4D /* IVTPaymentRequestWithExtraResponse.h */,
-				298A38DB1E5C844A00B57B4D /* IVTPaymentRequestWithExtraResponse.m */,
-				298A38DC1E5C844A00B57B4D /* IVTPaymentVerificationResponse.h */,
-				298A38DD1E5C844A00B57B4D /* IVTPaymentVerificationResponse.m */,
-				298A38DE1E5C844A00B57B4D /* IVTRequestResultHandler.h */,
-				298A38DF1E5C844A00B57B4D /* IVTRequestResultHandler.m */,
-				298A38E01E5C844A00B57B4D /* IVTSoapError.h */,
-				298A38E11E5C844A00B57B4D /* IVTSoapError.m */,
 				293344181E25107D000F51FC /* ZarinPal.h */,
 				293344191E25107D000F51FC /* ZarinPal.m */,
 			);
@@ -220,49 +167,6 @@
 				2933442F1E257EFA000F51FC /* libxml2.tbd */,
 			);
 			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		298A38F31E5C84A400B57B4D /* KissXML */ = {
-			isa = PBXGroup;
-			children = (
-				298A38FD1E5C84D300B57B4D /* Additions */,
-				298A38F91E5C84C900B57B4D /* Categories */,
-				298A38F51E5C84BA00B57B4D /* Private */,
-				298A38E91E5C84A000B57B4D /* DDXML.h */,
-				298A38EA1E5C84A000B57B4D /* DDXMLDocument.h */,
-				298A38EB1E5C84A000B57B4D /* DDXMLDocument.m */,
-				298A38EC1E5C84A000B57B4D /* DDXMLElement.h */,
-				298A38ED1E5C84A000B57B4D /* DDXMLElement.m */,
-				298A38EE1E5C84A000B57B4D /* DDXMLNode.h */,
-				298A38EF1E5C84A000B57B4D /* DDXMLNode.m */,
-			);
-			name = KissXML;
-			sourceTree = "<group>";
-		};
-		298A38F51E5C84BA00B57B4D /* Private */ = {
-			isa = PBXGroup;
-			children = (
-				298A38F41E5C84B000B57B4D /* DDXMLPrivate.h */,
-			);
-			name = Private;
-			sourceTree = "<group>";
-		};
-		298A38F91E5C84C900B57B4D /* Categories */ = {
-			isa = PBXGroup;
-			children = (
-				298A38F61E5C84C500B57B4D /* NSString+DDXML.h */,
-				298A38F71E5C84C500B57B4D /* NSString+DDXML.m */,
-			);
-			name = Categories;
-			sourceTree = "<group>";
-		};
-		298A38FD1E5C84D300B57B4D /* Additions */ = {
-			isa = PBXGroup;
-			children = (
-				298A38FA1E5C84D000B57B4D /* DDXMLElementAdditions.h */,
-				298A38FB1E5C84D000B57B4D /* DDXMLElementAdditions.m */,
-			);
-			name = Additions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -401,22 +305,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				298A38F11E5C84A000B57B4D /* DDXMLElement.m in Sources */,
-				298A38E51E5C844A00B57B4D /* IVTPaymentRequestWithExtraResponse.m in Sources */,
-				298A38E81E5C844A00B57B4D /* IVTSoapError.m in Sources */,
 				293343EC1E25104A000F51FC /* ViewController.m in Sources */,
-				298A38FC1E5C84D000B57B4D /* DDXMLElementAdditions.m in Sources */,
 				293343E91E25104A000F51FC /* AppDelegate.m in Sources */,
-				298A38E21E5C844A00B57B4D /* IVTHelper.m in Sources */,
-				298A38E31E5C844A00B57B4D /* IVTPaymentGatewayImplementationServiceBinding.m in Sources */,
-				298A38F21E5C84A000B57B4D /* DDXMLNode.m in Sources */,
-				298A38E41E5C844A00B57B4D /* IVTPaymentRequestResponse.m in Sources */,
-				298A38F81E5C84C500B57B4D /* NSString+DDXML.m in Sources */,
-				298A38E61E5C844A00B57B4D /* IVTPaymentVerificationResponse.m in Sources */,
 				2933441A1E25107D000F51FC /* ZarinPal.m in Sources */,
 				293343E61E25104A000F51FC /* main.m in Sources */,
-				298A38F01E5C84A000B57B4D /* DDXMLDocument.m in Sources */,
-				298A38E71E5C844A00B57B4D /* IVTRequestResultHandler.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -564,7 +456,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = R32459M72F;
-				HEADER_SEARCH_PATHS = /usr/include/libxml2;
+				HEADER_SEARCH_PATHS = "";
 				INFOPLIST_FILE = ZarinPal/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				OTHER_CFLAGS = "-I/usr/include/libxml2";
@@ -579,7 +471,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = R32459M72F;
-				HEADER_SEARCH_PATHS = /usr/include/libxml2;
+				HEADER_SEARCH_PATHS = "";
 				INFOPLIST_FILE = ZarinPal/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				OTHER_CFLAGS = "-I/usr/include/libxml2";

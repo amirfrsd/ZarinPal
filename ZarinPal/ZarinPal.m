@@ -17,44 +17,80 @@
 
 
 - (void)startPaymentWithAmount:(NSNumber *)amount callBackURL:(NSString *)callback description:(NSString *)desc mobile:(NSString *)mobile email:(NSString *)mail paymentBlock:(paymentBlock) paymentBlock {
-    IVTPaymentGatewayImplementationServiceBinding *service = [[IVTPaymentGatewayImplementationServiceBinding alloc] init];
-    [service PaymentRequestAsync:self.merchantID Amount:amount.intValue Description:desc Email:mail Mobile:mobile CallbackURL:callback __target:self __handler:@selector(handler:)];
-    paymentBlock(YES);
-}
-
--(void) handler:(id)obj {
-    if ([obj isKindOfClass:[IVTPaymentRequestResponse class]]) {
-        IVTPaymentRequestResponse *result = (IVTPaymentRequestResponse *)obj;
-        NSDictionary *dict = @{
-                               @"Type":@"paymentRequest",
-                               @"Authority":[obj valueForKey:@"Authority"]
-                               };
-        [[NSNotificationCenter defaultCenter] postNotificationName:@"responseReceived" object:dict];
-    } else if ([obj isKindOfClass:[IVTPaymentVerificationResponse class]]) {
-        IVTPaymentVerificationResponse *result = (IVTPaymentVerificationResponse *)obj;
-        if ([obj valueForKey:@"Status"] == 100) {
-            NSDictionary *dict = @{
-                                   @"Type":@"verificationRequest",
-                                   @"Status":@"1"
-                                   };
-            [[NSNotificationCenter defaultCenter] postNotificationName:@"responseReceived" object:dict];
-        } else {
-            NSDictionary *dict = @{
-                                   @"Type":@"verificationRequest",
-                                   @"Status":@"0"
-                                   };
-            [[NSNotificationCenter defaultCenter] postNotificationName:@"responseReceived" object:dict];
+    NSURLSessionConfiguration* sessionConfig = [NSURLSessionConfiguration defaultSessionConfiguration];
+    NSURLSession* session = [NSURLSession sessionWithConfiguration:sessionConfig delegate:nil delegateQueue:nil];
+    NSURL* URL = [NSURL URLWithString:@"https://www.zarinpal.com/pg/rest/WebGate/PaymentRequest.json"];
+    NSMutableURLRequest* request = [NSMutableURLRequest requestWithURL:URL];
+    request.HTTPMethod = @"POST";
+    [request addValue:@"application/json" forHTTPHeaderField:@"Content-Type"];
+    NSDictionary* bodyObject = @{
+                                 @"Description": desc,
+                                 @"Mobile":mobile,
+                                 @"Email":mail,
+                                 @"CallbackURL": callback,
+                                 @"MerchantID": self.merchantID,
+                                 @"Amount": amount
+                                 };
+    NSInteger integer = bodyObject.description.length;
+    NSString *length = [NSString stringWithFormat:@"%li",(long)integer];
+    [request addValue:length forHTTPHeaderField:@"Content-Length"];
+    request.HTTPBody = [NSJSONSerialization dataWithJSONObject:bodyObject options:kNilOptions error:NULL];
+    NSURLSessionDataTask* task = [session dataTaskWithRequest:request completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
+        if (error == nil) {
+            NSLog(@"URL Session Task Succeeded: HTTP %ld", ((NSHTTPURLResponse*)response).statusCode);
+            NSDictionary *responseDict = [NSJSONSerialization JSONObjectWithData:data options:kNilOptions error:nil];
+            if ([[responseDict valueForKey:@"Status"] intValue] == 100) {
+                NSString *str = [responseDict valueForKey:@"Authority"];
+                paymentBlock(YES,str);
+            } else {
+                NSString *str = [responseDict valueForKey:@"Status"];
+                paymentBlock(YES,str);
+            }
         }
-    } else {
-        NSError *err = (NSError *)obj;
-        [[NSNotificationCenter defaultCenter] postNotificationName:@"responseReceived" object:@{@"Type":@"failed"}];
-    }
+        else {
+            paymentBlock(NO,@"");
+            NSLog(@"URL Session Task Failed: %@", [error localizedDescription]);
+        }
+    }];
+    [task resume];
+    [session finishTasksAndInvalidate];
 }
 
 - (void)verifyPaymentWithAmount:(NSString *)amount authority:(NSString *)authority verificationBlock:(verificationBlock) verificationBlock {
-    IVTPaymentGatewayImplementationServiceBinding *service = [[IVTPaymentGatewayImplementationServiceBinding alloc] init];
-    [service PaymentVerificationAsync:self.merchantID Authority:authority Amount:amount __target:self __handler:@selector(handler:)];
-    verificationBlock(YES);
+    NSURLSessionConfiguration* sessionConfig = [NSURLSessionConfiguration defaultSessionConfiguration];
+    NSURLSession* session = [NSURLSession sessionWithConfiguration:sessionConfig delegate:nil delegateQueue:nil];
+    NSURL* URL = [NSURL URLWithString:@"https://www.zarinpal.com/pg/rest/WebGate/PaymentVerification.json"];
+    NSMutableURLRequest* request = [NSMutableURLRequest requestWithURL:URL];
+    request.HTTPMethod = @"POST";
+    [request addValue:@"application/json" forHTTPHeaderField:@"Content-Type"];
+    NSDictionary* bodyObject = @{
+                                 @"MerchantID": self.merchantID,
+                                 @"Amount": amount,
+                                 @"Authority": authority
+                                 };
+    NSInteger integer = bodyObject.description.length;
+    NSString *length = [NSString stringWithFormat:@"%li",(long)integer];
+    [request addValue:length forHTTPHeaderField:@"Content-Length"];
+    request.HTTPBody = [NSJSONSerialization dataWithJSONObject:bodyObject options:kNilOptions error:NULL];
+    NSURLSessionDataTask* task = [session dataTaskWithRequest:request completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
+        if (error == nil) {
+            NSLog(@"URL Session Task Succeeded: HTTP %ld", ((NSHTTPURLResponse*)response).statusCode);
+            NSDictionary *responseDict = [NSJSONSerialization JSONObjectWithData:data options:kNilOptions error:nil];
+            if ([[responseDict valueForKey:@"Status"] intValue] == 100) {
+                NSString *str = [responseDict valueForKey:@"RefID"];
+                verificationBlock(YES,str);
+            } else {
+                NSString *str = [responseDict valueForKey:@"Status"];
+                verificationBlock(YES,str);
+            }
+        }
+        else {
+            verificationBlock(NO,@"");
+            NSLog(@"URL Session Task Failed: %@", [error localizedDescription]);
+        }
+    }];
+    [task resume];
+    [session finishTasksAndInvalidate];
 }
 
 
