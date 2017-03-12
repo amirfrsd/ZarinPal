@@ -12,16 +12,12 @@
     NSString *paymentURL;
     NSString *error;
 }
-@property (weak, nonatomic) IBOutlet UILabel *authLabel;
-@property (weak, nonatomic) IBOutlet UIButton *openButton;
 @end
 
 @implementation ViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    //[self startPayment];
-    [self verifyPayment];
 }
 
 - (void) startPayment {
@@ -43,13 +39,6 @@
             NSLog(@"%@",response);
         }
     }];
-   /* [zarinPalObject verifyPaymentWithAmount:@"AMOUNT IN TOMANS" authority:@"AUTHORITY" verificationBlock:^(BOOL verificationRequestSent) {
-        if (verificationRequestSent) {
-            NSLog(@"request sent");
-        } else {
-            //oops!
-        }
-    }];*/
 }
 
 - (void)didReceiveMemoryWarning {
