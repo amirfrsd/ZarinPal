@@ -11,6 +11,7 @@ Simply Drag Files to your project (ZarinPal.h,.m) , Then `#import "ZarinPal.h"` 
 
 Payment Request
 ```Swift
+        let zarinPalObject = ZarinPal.init(merchantID: "MERCHANT-ID")
         zarinPalObject?.startPayment(withAmount: "", callBackURL: "", description: "", mobile: "", email: "", paymentBlock: { (success, response) in
             if success {
                print(response)
@@ -22,6 +23,7 @@ Payment Request
 
 Payment Verification Request
 ```Swift
+        let zarinPalObject = ZarinPal.init(merchantID: "MERCHANT-ID")
         zarinPalObject?.verifyPayment(withAmount: "", authority: "", verificationBlock:  { (success, response) in
             if success {
                print(response)
