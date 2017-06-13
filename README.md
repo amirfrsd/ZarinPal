@@ -5,10 +5,9 @@ request/verify payments from ZarinPal for iOS
 requirements: Zarinpal Merchant ID
 
 
-## New Feature
+## Changelog
 - [X] SandBox Mode Added - Note: This will only work for payment requests
 
-Examples are included :-)
 
 # Swift
 
