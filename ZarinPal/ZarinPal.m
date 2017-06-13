@@ -7,14 +7,15 @@
 //
 
 #import "ZarinPal.h"
+#define SANDBOX @"https://sandbox.zarinpal.com/pg/StartPay/";
+#define DEFAULT @"https://zarinpal.com/pg/StartPay/";
 @implementation ZarinPal 
 
-
-- (id)initWithMerchantID:(NSString *)merchantID {
+- (id)initWithMerchantID:(NSString *)merchantID sandBoxMode:(BOOL)sandbox {
     self.merchantID = merchantID;
+    self.sandbox = sandbox;
     return self;
 }
-
 
 - (void)startPaymentWithAmount:(NSNumber *)amount callBackURL:(NSString *)callback description:(NSString *)desc mobile:(NSString *)mobile email:(NSString *)mail paymentBlock:(paymentBlock) paymentBlock {
     NSURLSessionConfiguration* sessionConfig = [NSURLSessionConfiguration defaultSessionConfiguration];
@@ -41,7 +42,9 @@
             NSDictionary *responseDict = [NSJSONSerialization JSONObjectWithData:data options:kNilOptions error:nil];
             if ([[responseDict valueForKey:@"Status"] intValue] == 100) {
                 NSString *str = [responseDict valueForKey:@"Authority"];
-                paymentBlock(YES,str);
+                NSString *defaultStr = DEFAULT;
+                NSString *sandboxedStr = SANDBOX;
+                paymentBlock(YES,[NSString stringWithFormat:@"%@%@",self.sandbox ? sandboxedStr : defaultStr,str]);
             } else {
                 NSString *str = [responseDict valueForKey:@"Status"];
                 paymentBlock(YES,str);

@@ -21,7 +21,7 @@
 }
 
 - (void) startPayment {
-    ZarinPal *zarinPalObject = [[ZarinPal alloc] initWithMerchantID:@"MERCHANT-ID"];
+    ZarinPal *zarinPalObject = [[ZarinPal alloc] initWithMerchantID:@"" sandBoxMode:true];
     [zarinPalObject startPaymentWithAmount:@"" callBackURL:@"" description:@"" mobile:@"" email:@"" paymentBlock:^(BOOL success, NSString *response) {
         if (success) {
             NSLog(@"Authority : %@ So The Payment URL is : https://zarinpal.com/pg/StartPay/%@", response,response);
@@ -31,7 +31,7 @@
     }];
 }
 - (void) verifyPayment {
-    ZarinPal *zarinPalObject = [[ZarinPal alloc] initWithMerchantID:@"MERCHANT-ID"];
+    ZarinPal *zarinPalObject = [[ZarinPal alloc] initWithMerchantID:@"" sandBoxMode:true];
     [zarinPalObject verifyPaymentWithAmount:@"" authority:@"" verificationBlock:^(BOOL success, NSString *response) {
         if (success) {
             NSLog(@"this is Ref ID : %@",response);
