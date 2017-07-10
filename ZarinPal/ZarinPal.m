@@ -7,8 +7,8 @@
 //
 
 #import "ZarinPal.h"
-#define SANDBOX @"https://sandbox.zarinpal.com/pg/StartPay/";
-#define DEFAULT @"https://zarinpal.com/pg/StartPay/";
+#define SANDBOX @"https://sandbox.zarin.link/pg/StartPay/";
+#define DEFAULT @"https://zarin.link/pg/StartPay/";
 @implementation ZarinPal 
 
 - (id)initWithMerchantID:(NSString *)merchantID sandBoxMode:(BOOL)sandbox {
